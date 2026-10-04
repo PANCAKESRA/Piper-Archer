@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Prop - PA-28-181 Sea Shanty</title>
+    <style>
+        :root {
+            --primary: #1d3557;
+            --accent: #e63946;
+            --card-bg: rgba(255, 255, 255, 0.92);
+            --text: #1d3557;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+
+        /* Full-screen blurred background image */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            /* Replace 'cover.jpg' with your image file name */
+            background: url('cover.jpg') no-repeat center center/cover;
+            filter: blur(12px) brightness(0.65);
+            transform: scale(1.05); /* Prevents blurred edges from shrinking */
+            z-index: -1;
+        }
+
+        .player-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+            padding: 30px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .cover-art {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 10px 0 5px 0;
+            color: var(--primary);
+            font-size: 1.7rem;
+        }
+
+        p.subtitle {
+            color: #457b9d;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        audio {
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .lyrics-box {
+            background: rgba(248, 249, 250, 0.9);
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            max-height: 200px;
+            overflow-y: auto;
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .lyrics-box h3 {
+            margin-top: 0;
+            color: var(--accent);
+            text-align: center;
+        }
+
+        /* Custom Scrollbar */
+        .lyrics-box::-webkit-scrollbar {
+            width: 6px;
+        }
+        .lyrics-box::-webkit-scrollbar-thumb {
+            background: #a8dede;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="player-card">
+        <!-- Cover Art Image -->
+        <img src="Cover.jpg" alt="Clear Prop Cover Art" class="cover-art">
+
+        <h1>Clear Prop Across the Ramp</h1>
+        <p class="subtitle">PA-28-181 Archer Start-Up Sea Shanty</p>
+
+        <!-- Audio Player -->
+        <audio controls>
+            <source src="Song.mp4" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+    </div>
+
+</body>
+</html>
